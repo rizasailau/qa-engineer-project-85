@@ -2,6 +2,3 @@
 project:
   name: "QA Engineer Project 85"
   description: "Учебный проект по курсу QA Engineer (Hexlet) / Риза Сайлау."
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/rizasailau/qa-engineer-project-85/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/rizasailau/qa-engineer-project-85/actions)

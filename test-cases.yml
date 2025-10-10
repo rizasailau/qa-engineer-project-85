@@ -3,29 +3,31 @@
   requirement: |
     При корректных данных пользователь должен зарегистрироваться
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = Riz
-    Email = riz@mail.com
-    Password = Pass123@
+    Email = riz@mail.com (Необходимо ввести новые тестовые данные)
+    Password = Pass123@ 
   steps:
+    - https://codebattle.hexlet.io/ пройти по ссылке
     - Нажать "Sign Up"
     - Ввести данные
     - Нажать "Submit"
   expected-result: |
-    Пользователь зарегистрирован и перенаправлен в лобби
+    Пользователь зарегистрирован и перенаправлен в лобби. В правом верхнем углу пользователь видит свой ник
 
 - summary: |
     2. Проверка ошибки регистрации при пустом email
   requirement: |
     Email обязателен для ввода
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = Riz
     Email = ""
     Password = Pass123@
   steps:
+    - https://codebattle.hexlet.io/ пройти по ссылке
     - Нажать "Sign Up"
     - Оставить поле email пустым
     - Нажать "Submit"
@@ -37,12 +39,13 @@
   requirement: |
     Пароль обязателен для ввода
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = Riz
     Email = riz@mail.com
     Password = ""
   steps:
+    - https://codebattle.hexlet.io/ пройти по ссылке
     - Нажать "Sign Up"
     - Заполнить email и nickname
     - Оставить поле password пустым
@@ -54,12 +57,13 @@
   requirement: |
     Email должен быть валидным
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = Riz
     Email = riz@mail
     Password = Pass123@
   steps:
+    - https://codebattle.hexlet.io/ пройти по ссылке
     - Нажать "Sign Up"
     - Ввести данные
   expected-result: |
@@ -70,7 +74,7 @@
   requirement: |
     Пароль должен быть не менее 6 символов и без специального символа
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = Riz
     Email = riz@mail.com
@@ -86,7 +90,7 @@
   requirement: |
     Пароли должны совпадать
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = Riz
     Email = riz@mail.com
@@ -103,7 +107,7 @@
   requirement: |
     Nickname должен быть на латинце
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = Риз
     Email = riz@mail.com
@@ -131,7 +135,7 @@
     Пользователь авторизован и перенаправлен в лобби
 
 - summary: |
-    9. Проверка ошибки при неверном пароле
+    9. Проверка ошибки авторизации при неверном пароле
   requirement: |
     При неверном пароле доступ запрещён
   prerequisites: |
@@ -143,7 +147,7 @@
     - Ввести email и неверный пароль
     - Нажать "Submit"
   expected-result: |
-    Отображается ошибка "Invalid credentials"
+    Отображается ошибка "INVALID_PASSWORD" в окошке авторизации
 
 - summary: |
     10. Проверка ошибки при вводе несуществующего email
@@ -199,6 +203,7 @@
   test-data: |
     Авторизованный пользователь Riz
   steps:
+    - Перейти в меню
     - Нажать "Logout"
   expected-result: |
     Пользователь выходит из аккаунта и перенаправляется на главную страницу
@@ -241,8 +246,10 @@
     - Нажать "Forgot your password?"
     - Ввести email
     - Нажать "Submit"
+    - Открыть электронную почту и перейти
+    - Перейти по ссылке для сброса пароля
   expected-result: |
-    На email отправлена ссылка для восстановления пароля
+    На email отправлена ссылка для восстановления пароля и пароль успешно обновлен
 
 - summary: |
     17. Проверка ошибки при восстановлении пароля с пустым email
@@ -340,7 +347,7 @@
     Отображается название выбранного уровня сложности 
 
 - summary: |
-    24. Проверка выбора типа игры
+    24. Проверка выбора типа игры (Лишний тест)
   requirement: |
     Пользователь должен иметь возможность выбрать "With other user", "With a friend", "With a bot"
   prerequisites: |
@@ -589,7 +596,7 @@
     Отображается сообщение "Ты заслуживаешь победы, продолжай!", игра заверщается
 
 - summary: |
-    42. Проверка возврата игрока после сдачи
+    42. Проверка  невозможности возврата игрока после сдачи
   requirement: |
     Игрок не может вернуться в игру после сдачи
   prerequisites: |
